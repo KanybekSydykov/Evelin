@@ -1,6 +1,8 @@
 import {Providers} from './Theme'
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
+import { Suspense } from 'react'
+import { Skeleton } from '@chakra-ui/react'
 
 export async function generateMetadata(
   { params, searchParams },
@@ -32,11 +34,15 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <Suspense fallback={<Skeleton height={'100vh'} width={'100vw'} />}>
+
         <Providers>
           <Header />
         {children}
         <Footer data={contacts.contact_info}/>
         </Providers>
+        </Suspense>
+
         </body>
     </html>
   );

@@ -3,7 +3,8 @@ import About from "@/components/home/About";
 import Hero from "@/components/home/Hero";
 import ProductList from "@/components/productList/ProductList";
 import ProductListSlide from "@/components/productList/ProductListSlide";
-import {Container, Flex} from '@chakra-ui/react'
+import {Container, Flex, Skeleton} from '@chakra-ui/react'
+import { Suspense } from "react";
 
 export default async function Home() {
 
@@ -16,8 +17,10 @@ export default async function Home() {
   const aboutData = {title:data.main_page.content_title,description:data.main_page.content_text,image:data.main_page.content_image};
   
 
-  console.log(data);
   return (
+    <Suspense fallback={<Skeleton height={'100vh'} width={'100vw'} />}>
+
+ 
     <main>
 
       <Hero data={heroData}/>
@@ -47,5 +50,6 @@ export default async function Home() {
 
 
     </main>
+    </Suspense>
   );
 }

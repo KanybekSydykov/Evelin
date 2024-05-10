@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import {
   Drawer,
   DrawerBody,
@@ -13,6 +13,7 @@ import {
   Flex,
   Box,
   Text,
+  Skeleton,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,7 +26,7 @@ export default function Menu() {
   const btnRef = useRef();
 
   return (
-    <>
+    <Suspense fallback={<Skeleton height={'100vh'} width={'100vw'} />}>
       <Flex
         ref={btnRef}
         onClick={onOpen}
@@ -308,6 +309,6 @@ export default function Menu() {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-    </>
+    </Suspense>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import Menu from "./Menu";
-import { Flex, Box, Text, useMediaQuery } from "@chakra-ui/react";
+import { Flex, Box, Text, useMediaQuery, Skeleton } from "@chakra-ui/react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -12,7 +12,7 @@ const Header = () => {
 
 
   return (
-    <>
+    <Suspense fallback={<Skeleton height={'100vh'} width={'100vw'} />}>
       <Flex
         flexDir={"row"}
         alignItems={"center"}
@@ -78,7 +78,7 @@ const Header = () => {
 
         {!isDesktop && <Menu />}
       </Flex>
-    </>
+    </Suspense>
   );
 };
 
