@@ -14,6 +14,7 @@ import {
   FormLabel,
   Input,
   FormHelperText,
+  Box
 
 } from "@chakra-ui/react";
 import {useState} from "react";
@@ -34,7 +35,7 @@ export default function OrderModal({variant,selectedSize,prodTitle,links}) {
   const [errorName, setErrorName] = useState(true);
   const [errorPhone, setErrorPhone] = useState(true);
 
-  const message = `Здраствуйте,интересует платье ${prodTitle} в цвете ${variant && variant.color.color} в размере ${selectedSize.size}. Ссылка на платье https://www.evelin.kg/dress?id=${params.get("id")}`
+  const message = `Здраствуйте,интересует платье ${prodTitle} в цвете ${variant && variant.color.color} в размере ${selectedSize.size}. Ссылка на платье https://evelin.kg/dress?id=${params.get("id")}`
 
   function handleNameChange(e) {
     setName(e.target.value);
