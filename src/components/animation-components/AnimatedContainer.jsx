@@ -15,9 +15,8 @@ const bgAnimation = {
   animate: {
     background: "rgba(222, 182, 178, 1)",
     transition:{
-        duration: .5,
-        delay: .5,
-        type: "spring",
+        duration: .8,
+        type: "easeOut",
        }
   },
 };
@@ -43,10 +42,12 @@ const AnimatedContainer = ({ children }) => {
     ref={ref}
     variants={bgAnimation}
     initial="initial"
-    animate={isInView ? "animate" : "initial"}
+    animate={"initial"}
+    whileInView={isInView ? "animate" : "initial"}
     width={'100%'}
     zIndex={3}
     pos={'relative'}
+    mt={'50px'}
     transition={'all .5s ease-in-out'}
     _after={{
       content: '""',
@@ -57,6 +58,10 @@ const AnimatedContainer = ({ children }) => {
       height:'25px',
       left: "0",
       zIndex: "5",
+      width: "100%",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center center",
       backgroundImage: "url('/top-rounded-bg.svg')",
       transform: "rotate(180deg)",
     }}
@@ -70,6 +75,10 @@ const AnimatedContainer = ({ children }) => {
         height:'40px',
         left: "0",
         zIndex: "5",
+        width: "100%",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
         backgroundImage: "url('/bottom-rounded-bg.svg')",
         transform: "rotate(180deg)",
     }}
