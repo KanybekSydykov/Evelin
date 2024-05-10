@@ -169,7 +169,7 @@ export default function OrderModal({variant,selectedSize,prodTitle,links}) {
                   bg={"rgba(0, 217, 95, 1)"}
                 >
                   <Image
-                    src={"/whatsapp.svg"}
+                    src={"/Whatsapp.svg"}
                     alt={"whatsapp"}
                     width={50}
                     height={50}

@@ -25,7 +25,9 @@ export async function generateMetadata(
 }
 
 const page = async ({ searchParams }) => {
-  const res = await fetch(`https://eveline.tatadev.pro/catalog/api/products/${searchParams.id}`)
+  const res = await fetch(`https://eveline.tatadev.pro/catalog/api/products/${searchParams.id}`,{
+    cache: "no-cache"
+  })
   const data = await res.json()
   return (
     <Suspense
