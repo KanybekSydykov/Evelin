@@ -1,0 +1,28 @@
+.review-slider .splide__slide {
+  display: flex;
+  align-items: flex-end;
+}
+
+.review-slider .splide__slide div {
+  transition: all 0.5s ease-in-out;
+}
+.review-slider .splide__slide.is-active div {
+  width: 256px;
+  height: 560px;
+}
+
+.review-slider .splide__arrow:disabled {
+  opacity: 0.3;
+}
+
+.review-slider .splide__arrow:hover:not(:disabled) {
+  opacity: 1;
+}
+
+.review-slider .splide__arrow:hover {
+  background: #fff;
+}
+
+.review-slider .splide__arrow{
+    transform: translateY(0);
+}
