@@ -62,6 +62,7 @@ const CardSlider = ({ activeSlideIndex,product }) => {
             key={index}
             controls
             autoPlay
+            playsInline
             loop
             muted
             width={'100%'}
