@@ -83,6 +83,11 @@ export default function OrderModal({variant,selectedSize,prodTitle,links}) {
       // Handle fetch or parsing errors here (e.g., display an error message or log the error)
       console.error('Error:', error);
     }
+
+    setTimeout(() => {
+      setOrderSent(false);
+      onClose();
+    }, 3000);
   }
   
 
