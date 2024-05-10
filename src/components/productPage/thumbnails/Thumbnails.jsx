@@ -94,6 +94,7 @@ const Thumbnails = ({ images }) => {
                           autoPlay
                           loop
                           muted
+                          playsInline
                           width={"100%"}
                           height={"100%"}
                         ></video>
