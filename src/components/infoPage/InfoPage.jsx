@@ -32,7 +32,7 @@ const InfoPage = ({ params, data }) => {
   }, [params.tab]);
 
   const { tab } = params;
-  console.log(data);
+
 
   function getOrderedList(text) {
     return text.split(/(?=\d+\.\s)/);
@@ -129,8 +129,8 @@ const InfoPage = ({ params, data }) => {
           </TabList>
 
           <TabPanels
-            py={{ lg: "none" }}
-            mt={{ base: "50px", lg: "none" }}
+            py={{ lg: "unset" }}
+            mt={{ base: "50px", md: "unset" }}
             ps={{ lg: "50px" }}
             pe={{ lg: "0" }}
           >

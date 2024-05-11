@@ -9,7 +9,7 @@ import Image from "next/image";
 import ProductCard from "../productCard/ProductCard";
 import ProductListSlider from "./ProductListSlider";
 
-const ProductListSlide = async({title,is_top,img}) => {
+const ProductListSlide = async({title,is_top,img = null}) => {
   'use server'
   const res = await fetch(`https://eveline.tatadev.pro/catalog/api/products/${is_top ? '?is_top=true' : ''}`)
   const products = await res.json()
@@ -36,13 +36,13 @@ const ProductListSlide = async({title,is_top,img}) => {
         >
           {title}
         </Text>
-        <Image
+       {img && <Image
           src={img}
           alt={"smilegif"}
           width={25}
           height={25}
           style={{ width: "25px", height: "25px" }}
-        />
+        />}
       </Flex>
 
       <ProductListSlider products={products.results}/>
