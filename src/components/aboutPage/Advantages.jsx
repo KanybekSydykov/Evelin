@@ -5,6 +5,26 @@ import Image from "next/image";
 const Advantages = ({title,advantages}) => {
   return (
     <Container px={0} position={"relative"} maxW={"unset"}>
+      <Image src={'/top-rounded-bg.svg'} alt={'top rounded bg'} width={1000} height={25} style={{
+        position: 'absolute',
+        zIndex: 1,
+        top: 0,
+        left: 0,
+        width:'100%',
+        height:'25px',
+        objectFit: 'cover',
+        rotate: '180deg'
+      }} />
+      <Image src={'/bottom-rounded-bg.svg'} alt={'top rounded bg'} width={1000} height={25} style={{
+        position: 'absolute',
+        zIndex: 1,
+        bottom: 0,
+        left: 0,
+        width:'100%',
+        height:'40px',
+        objectFit: 'cover',
+        rotate: '180deg'
+      }} />
       <Image
         src={"/about-bg.png"}
         alt={"about page background image"}
