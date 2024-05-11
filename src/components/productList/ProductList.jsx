@@ -49,7 +49,7 @@ const ProductList = async({ start,title, pagination = false ,is_new=false,img}) 
       </Flex>
       <Grid
         gridTemplateColumns={{base:"repeat(2, minmax(171px,191px))",lg:"repeat(3, 277px)",xl:"repeat(4, 277px)"}}
-        gap={{base:"16px",lg:'80px',xl:'15px'}}
+        gap={{base:"16px",lg:'30px',xl:'30px'}}
         mt={"35px"}
       >
         {products.results.map((item) => (

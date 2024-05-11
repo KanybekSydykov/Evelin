@@ -36,6 +36,9 @@ const Header = () => {
       >
         {isDesktop && (
           <Flex flexDir={"row"} gap={"30px"}>
+           {path === '/' ? null : <Link  href={"/about"}>
+              <Text  >ГЛАВНАЯ</Text>
+            </Link>}
             <Link  href={"/about"} prefetch={true}>
               <Text transition={'all 0.15s ease-in'} fontWeight={path === '/about' && '700'}  >О НАС</Text>
             </Link>

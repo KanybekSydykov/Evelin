@@ -39,12 +39,14 @@ const ProductListSlider = ({products}) => {
               perPage:3,
               padding: { left: 0, right: 0},
               fixedWidth:'220px',
+              gap:20
             },
             1200:{
               perPage:4,
               padding: { left: 0, right: 0},
               fixedWidth:'277px',
               arrows:true,
+              gap:30
             }
           
           },

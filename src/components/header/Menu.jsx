@@ -145,6 +145,14 @@ export default function Menu() {
               alignItems={"center"}
               textTransform={"uppercase"}
             >
+              <Link href={"/"} onClick={onClose}>
+                <Text
+                  transition={"all 0.15s ease-in"}
+                  fontWeight={path === "/" && "700"}
+                >
+                  ГЛАВНАЯ
+                </Text>
+              </Link>
               <Link href={"/about"} onClick={onClose}>
                 <Text
                   transition={"all 0.15s ease-in"}
