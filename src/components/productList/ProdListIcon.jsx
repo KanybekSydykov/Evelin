@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Box } from "@chakra-ui/react";
+import { Box,useMediaQuery } from "@chakra-ui/react";
 import { animate, motion } from "framer-motion";
 import Image from "next/image";
 import { type } from 'os';
@@ -20,6 +20,8 @@ const IconAnimation ={
 }
 
 const ProdListIcon = ({start}) => {
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
+
   return (
     <Box as={motion.div}
     pos={"absolute"}
@@ -29,6 +31,7 @@ const ProdListIcon = ({start}) => {
     initial="initial"
     animate="initial"
     whileHover={'animate'}
+    whileInView={isMobile ? "animate" : "initial"}
     w={{base:"30px",lg:'60px'}}
     h={{base:"30px",lg:'60px'}}
 

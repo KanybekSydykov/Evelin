@@ -36,7 +36,7 @@ const Header = () => {
       >
         {isDesktop && (
           <Flex flexDir={"row"} gap={"30px"}>
-           {path === '/' ? null : <Link  href={"/about"}>
+           {path === '/' ? null : <Link  href={"/"}>
               <Text _hover={{textDecoration:'underline'}} >ГЛАВНАЯ</Text>
             </Link>}
             <Link  href={"/about"} prefetch={true}>

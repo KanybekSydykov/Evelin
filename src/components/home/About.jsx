@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Text, AspectRatio, Container } from "@chakra-ui/react";
+import { Box, Flex, Text, AspectRatio, Container ,useMediaQuery} from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -19,6 +19,8 @@ const IconAnimation = {
 };
 
 const About = ({ data }) => {
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
+
   return (
     <>
       <Flex
@@ -72,6 +74,7 @@ const About = ({ data }) => {
             initial="initial"
             animate="initial"
             whileHover={"animate"}
+            whileInView={isMobile ? "animate" : "initial"}
             zIndex={10}
             pos={"absolute"}
             top={{ base: "-11px", lg: "-15px" }}

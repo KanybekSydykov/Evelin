@@ -1,6 +1,6 @@
 'use client'
 
-import { Container, Flex, Text, AspectRatio,Skeleton } from "@chakra-ui/react";
+import { Container, Flex, Text, AspectRatio,useMediaQuery } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
 import HeroSlide from "./HeroSlide";
@@ -21,6 +21,9 @@ const IconAnimation ={
   }
 }
 const Hero = ({data}) => {
+
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
+
   return (
     <>
 
@@ -64,6 +67,7 @@ const Hero = ({data}) => {
             initial='initial'
             animate='initial'
             whileHover={"animate"}
+            whileInView={isMobile ? "animate" : "initial"}
             ratio={1}
             position={"absolute"}
             zIndex={10}
@@ -89,6 +93,7 @@ const Hero = ({data}) => {
           initial='initial'
           animate='initial'
           whileHover={"animate"}
+          whileInView={isMobile ? "animate" : "initial"}
           zIndex={10}
             ratio={1}
             position={"absolute"}
