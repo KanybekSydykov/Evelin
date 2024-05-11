@@ -53,7 +53,7 @@ const ProductList = async({ start,title, pagination = false ,is_new=false,img}) 
         mt={"35px"}
       >
         {products.results.map((item) => (
-          <GridItem fontFamily={"mulish"} transition={"all 0.3s ease"} p={'.2px'} key={item.id} _hover={{boxShadow:"0px 0px 4px rgba(222, 182, 178, 1)"}}>
+          <GridItem fontFamily={"mulish"} transition={"all 0.3s ease"} p={'.2px'} key={item.id}>
             <ProductCard productDetails={item} />
           </GridItem>
         ))}
