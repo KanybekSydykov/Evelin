@@ -19,11 +19,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 
-export default function Menu() {
+export default function Menu({data}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const path = usePathname();
   const params = useSearchParams();
   const btnRef = useRef();
+
+  console.log(data);
 
   return (
     <Suspense fallback={<Skeleton height={'100vh'} width={'100vw'} />}>
@@ -211,58 +213,23 @@ export default function Menu() {
               </Text>
 
               <Flex flexDir={"row"} gap={"20px"}>
+                {data.social_links.map((el, index) => (
+                  
                 <Link
-                  href={"https:/wa.me/996502431428"}
+                  href={el.url}
                   onClick={onClose}
                   target="_blank"
+                  key={index}
                 >
                   <Image
-                    src={"/Whatsapp.svg"}
-                    alt="vk"
+                    src={el.logo}
+                    alt={el.name}
                     width={36}
                     height={36}
                     style={{ width: "36px", height: "36px" }}
                   />
                 </Link>
-                <Link
-                  href={"https:/instagram.com/"}
-                  onClick={onClose}
-                  target="_blank"
-                >
-                  <Image
-                    src={"/Instagram.svg"}
-                    alt="vk"
-                    width={36}
-                    height={36}
-                    style={{ width: "36px", height: "36px" }}
-                  />
-                </Link>
-                <Link
-                  href={"https:/telegram.com/"}
-                  onClick={onClose}
-                  target="_blank"
-                >
-                  <Image
-                    src={"/Telegram.svg"}
-                    alt="vk"
-                    width={36}
-                    height={36}
-                    style={{ width: "36px", height: "36px" }}
-                  />
-                </Link>
-                <Link
-                  href={"https:/tiktok.com/"}
-                  onClick={onClose}
-                  target="_blank"
-                >
-                  <Image
-                    src={"/Tiktok.svg"}
-                    alt="vk"
-                    width={36}
-                    height={36}
-                    style={{ width: "36px", height: "36px" }}
-                  />
-                </Link>
+                ))}
               </Flex>
             </Flex>
 
@@ -278,7 +245,7 @@ export default function Menu() {
               <Flex flexDir={"column"}>
                 <Text fw={"400"}>Адрес</Text>
                 <Link
-                  href={"https:/2gis.kg/"}
+                  href={data.addresses[0].map_link}
                   target="_blank"
                   style={{
                     fontWeight: "700",
@@ -286,18 +253,18 @@ export default function Menu() {
                   onClick={onClose}
                 >
                   <Text _hover={{ textDecoration: "underline" }}>
-                    ул. Киевская 62, ТЦ “Евразия” 3 этаж, бутик COLLAB
+                   {data.addresses[0].address}
                   </Text>
                 </Link>
               </Flex>
               <Flex flexDir={"column"}>
                 <Text fw={"400"}>График работы:</Text>
-                <Text fontWeight={"700"}>с 10:00 до 21:00</Text>
+                <Text fontWeight={"700"}>с {data.work_schedules[0].start} до {data.work_schedules[0].end}</Text>
               </Flex>
               <Flex flexDir={"column"}>
                 <Text fw={"400"}>Для заказа WhatsApp:</Text>
                 <Link
-                  href={"https:/wa.me/996502431428"}
+                  href={data.social_links[0].url}
                   target="_blank"
                   style={{
                     fontWeight: "700",
@@ -309,7 +276,7 @@ export default function Menu() {
                       textDecoration: "underline",
                     }}
                   >
-                    +996 (502) 431-428
+                    {data.phones[0].phone}
                   </Text>
                 </Link>
               </Flex>

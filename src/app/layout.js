@@ -37,7 +37,7 @@ export default async function RootLayout({ children }) {
         <Suspense fallback={<Skeleton height={'100vh'} width={'100vw'} />}>
 
         <Providers>
-          <Header />
+          <Header data={contacts.contact_info} />
         {children}
         <Footer data={contacts.contact_info}/>
         </Providers>

@@ -5,7 +5,7 @@ import { Flex, Box, Text, useMediaQuery, Skeleton } from "@chakra-ui/react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
-const Header = () => {
+const Header = ({data}) => {
   const [isDesktop] = useMediaQuery("(min-width: 1024px)");
   const path = usePathname();
   const params = useSearchParams();
@@ -79,7 +79,7 @@ const Header = () => {
           </Flex>
         )}
 
-        {!isDesktop && <Menu />}
+        {!isDesktop && <Menu  data={data}/>}
       </Flex>
     </Suspense>
   );
