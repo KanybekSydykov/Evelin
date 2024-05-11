@@ -31,7 +31,7 @@ const Footer = ({data}) => {
           height={'max-content'}
         >
           <Text color={"#fff"} fontSize={"20px"} lineHeight={'30px'} fontWeight={"700"} mb={{base:"10px",lg:'6px'}}>
-            Компании
+            Компания
           </Text>
           <Link href={"/about"}>О нас</Link>
           <Link href={"/info?tab=0"}>Оптовикам</Link>
