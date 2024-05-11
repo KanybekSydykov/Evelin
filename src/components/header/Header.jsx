@@ -37,13 +37,13 @@ const Header = () => {
         {isDesktop && (
           <Flex flexDir={"row"} gap={"30px"}>
            {path === '/' ? null : <Link  href={"/about"}>
-              <Text  >ГЛАВНАЯ</Text>
+              <Text _hover={{textDecoration:'underline'}} >ГЛАВНАЯ</Text>
             </Link>}
             <Link  href={"/about"} prefetch={true}>
-              <Text transition={'all 0.15s ease-in'} fontWeight={path === '/about' && '700'}  >О НАС</Text>
+              <Text transition={'all 0.15s ease-in'} fontWeight={path === '/about' && '700'} _hover={{textDecoration:'underline'}}  >О НАС</Text>
             </Link>
             <Link href={"/info?tab=0"} prefetch={true}>
-              <Text transition={'all 0.15s ease-in'} fontWeight={path === '/info' && params.get('tab') === '0' &&  '700'} >ОПТОВИКАМ</Text>
+              <Text transition={'all 0.15s ease-in'} _hover={{textDecoration:'underline'}} fontWeight={path === '/info' && params.get('tab') === '0' &&  '700'} >ОПТОВИКАМ</Text>
             </Link>
           </Flex>
         )}
@@ -71,10 +71,10 @@ const Header = () => {
         {isDesktop && (
           <Flex flexDir={"row"} gap={"30px"}>
             <Link href={"/info?tab=1"}>
-              <Text transition={'all 0.15s ease-in'} fontWeight={path === '/info' && params.get('tab') === '1' &&  '700'} >ОПЛАТА</Text>
+              <Text _hover={{textDecoration:'underline'}} transition={'all 0.15s ease-in'} fontWeight={path === '/info' && params.get('tab') === '1' &&  '700'} >ОПЛАТА</Text>
             </Link>
             <Link href={"/info?tab=2"}>
-              <Text transition={'all 0.15s ease-in'} fontWeight={path === '/info' && params.get('tab') === '2' &&  '700'} >ДОСТАВКА</Text>
+              <Text _hover={{textDecoration:'underline'}} transition={'all 0.15s ease-in'} fontWeight={path === '/info' && params.get('tab') === '2' &&  '700'} >ДОСТАВКА</Text>
             </Link>
           </Flex>
         )}

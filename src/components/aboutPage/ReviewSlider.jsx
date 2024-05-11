@@ -100,7 +100,7 @@ const ReviewSlider = ({title,reviews}) => {
           justifyContent={'flex-end'}
           gap={'16px'}
           zIndex={3}
-          pe={'16px'}
+          pe={{base:'16px',lg:'120px'}}
         >
           <Button
             className="splide__arrow splide__arrow--prev"

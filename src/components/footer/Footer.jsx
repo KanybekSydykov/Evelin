@@ -33,10 +33,29 @@ const Footer = ({data}) => {
           <Text color={"#fff"} fontSize={"20px"} lineHeight={'30px'} fontWeight={"700"} mb={{base:"10px",lg:'6px'}}>
             Компания
           </Text>
-          <Link href={"/about"}>О нас</Link>
-          <Link href={"/info?tab=0"}>Оптовикам</Link>
-          <Link href={"/info?tab=1"}>Способы оплаты</Link>
-          <Link href={"/info?tab=2"}>Доставка и возврат</Link>
+          <Link href={"/about"}>
+            <Text _hover={{textDecoration:"underline"}}>
+            О нас
+              </Text>
+            </Link>
+          <Link href={"/info?tab=0"}>
+            <Text _hover={{textDecoration:"underline"}}>
+
+            Оптовикам
+            </Text>
+            
+            </Link>
+          <Link href={"/info?tab=1"}>
+            <Text _hover={{textDecoration:"underline"}}>
+
+            Способы оплаты
+            </Text>
+            </Link>
+          <Link href={"/info?tab=2"}>
+            <Text _hover={{textDecoration:"underline"}}>
+            Доставка и возврат
+            </Text>
+            </Link>
         </Flex>
 
         <Flex
