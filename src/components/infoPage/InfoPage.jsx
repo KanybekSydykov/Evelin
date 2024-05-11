@@ -31,8 +31,6 @@ const InfoPage = ({ params, data }) => {
     setTabIndex(params.tab ? parseInt(params.tab, 10) : 0);
   }, [params.tab]);
 
-  const { tab } = params;
-
 
   function getOrderedList(text) {
     return text.split(/(?=\d+\.\s)/);
