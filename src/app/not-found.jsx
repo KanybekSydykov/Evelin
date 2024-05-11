@@ -10,41 +10,55 @@ export default function NotFound() {
     >
 
       <Flex
-      color={'rgba(222, 182, 178, 1)'}
-      flexDir={'row'}
-      justifyContent={'center'}
-      alignItems={'center'}
+      color={'rgba(129, 78, 73, 1)'}
+      flexDir={'column'}
+      width={'100%'}
+      maxW={'680px'}
+      mx={'auto'}
       >
     <Text
     fontFamily={'infant'}
-    fontWeight={'400'}
-    fontSize={'200px'}
-    lineHeight={'242px'}
+    fontWeight={'700'}
+    fontSize={'100px'}
+    lineHeight={'121px'}
+    textAlign={'start'}
 >
-      4
+Страница
     </Text>
     <Text
     fontFamily={'infant'}
-    fontWeight={'400'}
-    fontSize={'200px'}
-    lineHeight={'242px'}
+    fontWeight={'700'}
+    fontSize={'100px'}
+    lineHeight={'121px'}
+    textAlign={'end'}
 >
-      0
+      не найдена
     </Text>
-    <Text
-    fontFamily={'infant'}
-    fontWeight={'400'}
-    fontSize={'200px'}
-    lineHeight={'242px'}
->
-      4
-    </Text>
+
+    <Text as={Link}
+        href={"/"}
+        w={"100%"}
+        h={"50px"}
+        bg={"gradientBg"}
+        color={"#fff"}
+        fontFamily={"mulish"}
+        fontWeight={"600"}
+        fontSize={"18px"}
+        lineHeight={"27px"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        borderRadius={0}
+        mt={"26px"}
+        maxW={'445px'}
+        mx={'auto'}
+        _hover={{textDecoration:"underline"}}
+      >
+        На главную
+      </Text>
+
       </Flex>
-      <Flex>
-        <Text>
-          Такой страницы не существует. Перейдите на <Link href={'/'}><Text as={'span'} color={'rgba(222, 182, 178, 1)'}>главную</Text></Link>
-        </Text>
-      </Flex>
+
 
     </Container>
   )
