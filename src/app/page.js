@@ -5,6 +5,9 @@ import ProductList from "@/components/productList/ProductList";
 import ProductListSlide from "@/components/productList/ProductListSlide";
 import {Container, Flex, Skeleton} from '@chakra-ui/react'
 import { Suspense } from "react";
+import Heart from '@/../public/evelin.gif'
+import Smile from '@/../public/smilegif.gif'
+import Star from '@/../public/star.gif'
 
 export default async function Home() {
 
@@ -31,7 +34,7 @@ export default async function Home() {
 
 
       
-      <ProductListSlide is_top={true} title={data.main_page.bestsellers_tittle}/>
+      <ProductListSlide img={Heart} is_top={true} title={data.main_page.bestsellers_tittle}/>
 
       <Container maxW={'container.xl'} pb={'100px'}>
 
@@ -42,8 +45,8 @@ export default async function Home() {
       >
 
         
-      <ProductList start={false} title={data.main_page.discount_tittle} is_new={true}/>
-      <ProductList start={true} title={data.main_page.all_products_title} pagination={true}/>
+      <ProductList img={Smile} start={false} title={data.main_page.discount_tittle} is_new={true}/>
+      <ProductList img={Star} start={true} title={data.main_page.all_products_title} pagination={true}/>
       </Flex>
 
       </Container>

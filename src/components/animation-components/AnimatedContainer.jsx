@@ -88,7 +88,7 @@ const AnimatedContainer = ({ children }) => {
     <Container
       maxW={"container.xl"}
       minH={{ base: "auto", lg: "600px", xl: "762px" }}
-      pb={{ base: "130px", lg: "114px" }}
+      pb={{ base: "55px", lg: "39px" }}
       pt={{ base: "80px", lg: "130px" }}
 
     >

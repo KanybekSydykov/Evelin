@@ -14,7 +14,7 @@ import Link from "next/link";
 import ProductCard from "../productCard/ProductCard";
 import ProdListIcon from "./ProdListIcon";
 
-const ProductList = async({ start,title, pagination = false ,is_new=false}) => {
+const ProductList = async({ start,title, pagination = false ,is_new=false,img}) => {
   'use server'
   const res = await fetch(`https://eveline.tatadev.pro/catalog/api/products/${is_new ? '?is_new=true' : ''}`)
   const products = await res.json()
@@ -40,7 +40,7 @@ const ProductList = async({ start,title, pagination = false ,is_new=false}) => {
          {title}
         </Text>
         <Image
-          src={"/smilegif.gif"}
+          src={img}
           alt={"smilegif"}
           width={25}
           height={25}
@@ -49,7 +49,7 @@ const ProductList = async({ start,title, pagination = false ,is_new=false}) => {
       </Flex>
       <Grid
         gridTemplateColumns={{base:"repeat(2, minmax(171px,191px))",lg:"repeat(3, 277px)",xl:"repeat(4, 277px)"}}
-        gap={{base:"15px",lg:'80px',xl:'15px'}}
+        gap={{base:"16px",lg:'80px',xl:'15px'}}
         mt={"35px"}
       >
         {products.results.map((item) => (
