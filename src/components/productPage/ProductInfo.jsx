@@ -45,6 +45,7 @@ const ProductInfo = ({data}) => {
     flexDir={'row'}
     gap={'8px'}
     width={'100%'}
+    ps={'32px'}
     >
         <Text as={Link}
       href={'/'}

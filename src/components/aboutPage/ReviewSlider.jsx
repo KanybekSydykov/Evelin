@@ -115,6 +115,7 @@ const ReviewSlider = ({title,reviews}) => {
             p={0}
             opacity={'1'}
             top={0}
+            minW={'unset'}
             border={'1px solid rgba(238, 29, 82, 1)'}
             // right={'48px'}
           >
@@ -143,6 +144,7 @@ const ReviewSlider = ({title,reviews}) => {
             borderRadius={'50%'}
             opacity={'1'}
             top={0}
+            minW={'unset'}
             border={'1px solid rgba(238, 29, 82, 1)'}
 
             // right={'16px'}

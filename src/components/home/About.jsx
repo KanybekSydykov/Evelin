@@ -30,6 +30,7 @@ const About = ({ data }) => {
           lg: "space-evenly",
           xl: "space-between",
         }}
+        pb={'75px'}
 
       >
         <Flex flexDir={"column"} gap={"30px"} maxW={"700px"}>
@@ -50,11 +51,10 @@ const About = ({ data }) => {
             lineHeight={{ base: "24px", lg: "33px" }}
             color={"rgba(117,73,66,1)"}
           >
-            {data.description.split(/\r?\n/).map((paragraph, index) => (
+            {data.description.split(/\r?\n/).map((paragraph, index, array) => (
               <React.Fragment key={index}>
                 {paragraph}
-                <br />
-                <br />
+                {array.length -1 === index ? null : <><br /> <br/></>}
               </React.Fragment>
             ))}
           </Text>

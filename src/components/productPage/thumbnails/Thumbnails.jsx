@@ -169,7 +169,7 @@ const Thumbnails = ({ images }) => {
           aria-label="Thumbnails"
           hasTrack={false}
           ref={thumbRef}
-          ps={{ base: "16px", md: "0" }}
+          px={{ base: "32px", md: "0" }}
           w={{ base: "100%", md: "100px" }}
           className="thumbnails-slider"
           options={{
