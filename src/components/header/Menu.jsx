@@ -19,7 +19,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 
-export default function Menu({data}) {
+export default function Menu({ data }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const path = usePathname();
   const params = useSearchParams();
@@ -28,7 +28,7 @@ export default function Menu({data}) {
   console.log(data);
 
   return (
-    <Suspense fallback={<Skeleton height={'100vh'} width={'100vw'} />}>
+    <Suspense fallback={<Skeleton height={"100vh"} width={"100vw"} />}>
       <Flex
         ref={btnRef}
         onClick={onOpen}
@@ -214,21 +214,20 @@ export default function Menu({data}) {
 
               <Flex flexDir={"row"} gap={"20px"}>
                 {data.social_links.map((el, index) => (
-                  
-                <Link
-                  href={el.url}
-                  onClick={onClose}
-                  target="_blank"
-                  key={index}
-                >
-                  <Image
-                    src={el.logo}
-                    alt={el.name}
-                    width={36}
-                    height={36}
-                    style={{ width: "36px", height: "36px" }}
-                  />
-                </Link>
+                  <Link
+                    href={el.url ? el.url : "#"}
+                    onClick={onClose}
+                    target="_blank"
+                    key={index}
+                  >
+                    <Image
+                      src={el.logo ? el.logo : '/evelin-logo.jpeg'}
+                      alt={el.name}
+                      width={36}
+                      height={36}
+                      style={{ width: "36px", height: "36px" }}
+                    />
+                  </Link>
                 ))}
               </Flex>
             </Flex>
@@ -242,26 +241,31 @@ export default function Menu({data}) {
               lineHeight={"27px"}
               mt={"80px"}
             >
-              <Flex flexDir={"column"}>
-                <Text fw={"400"}>Адрес</Text>
-                <Link
-                  href={data.addresses[0].map_link}
-                  target="_blank"
-                  style={{
-                    fontWeight: "700",
-                  }}
-                  onClick={onClose}
-                >
-                  <Text _hover={{ textDecoration: "underline" }}>
-                   {data.addresses[0].address}
-                  </Text>
-                </Link>
-              </Flex>
-              <Flex flexDir={"column"}>
+              {data.addresses[0] && (
+                <Flex flexDir={"column"}>
+                  <Text fw={"400"}>Адрес</Text>
+                  <Link
+                    href={data.addresses[0].map_link}
+                    target="_blank"
+                    style={{
+                      fontWeight: "700",
+                    }}
+                    onClick={onClose}
+                  >
+                    <Text _hover={{ textDecoration: "underline" }}>
+                      {data.addresses[0].address}
+                    </Text>
+                  </Link>
+                </Flex>
+              )}
+            {data.work_schedules[0] &&  <Flex flexDir={"column"}>
                 <Text fw={"400"}>График работы:</Text>
-                <Text fontWeight={"700"}>с {data.work_schedules[0].start} до {data.work_schedules[0].end}</Text>
-              </Flex>
-              <Flex flexDir={"column"}>
+                <Text fontWeight={"700"}>
+                  с {data.work_schedules[0].start} до{" "}
+                  {data.work_schedules[0].end}
+                </Text>
+              </Flex>}
+        { data.phones[0] &&      <Flex flexDir={"column"}>
                 <Text fw={"400"}>Для заказа WhatsApp:</Text>
                 <Link
                   href={data.social_links[0].url}
@@ -279,7 +283,7 @@ export default function Menu({data}) {
                     {data.phones[0].phone}
                   </Text>
                 </Link>
-              </Flex>
+              </Flex>}
             </Flex>
           </DrawerBody>
         </DrawerContent>

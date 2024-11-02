@@ -41,13 +41,13 @@ const CardSlider = ({ activeSlideIndex,product }) => {
         h={"100%"}
       >
         <Box as={SplideTrack} w={"100%"} h={"100%"}>
-          {product && product.media.map((item, index) => (
+          {product.media.length > 0 && product.media.map((item, index) => (
             
           <SplideSlide key={index}>
             <Box pos={'relative'} w={"100%"} h={"100%"}>
            {isImage(item) ? (
            <Image
-              src={item}
+              src={item ? item : '/evelin-logo.jpeg'}
               alt="Image 1"
               width={500}
               height={783}

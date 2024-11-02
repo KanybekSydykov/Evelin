@@ -164,7 +164,7 @@ const InfoPage = ({ params, data }) => {
                       mx={"auto"}
                     >
                       <Image
-                        src={product.image}
+                        src={product.image ? product.image : "/evelin-logo.jpeg"}
                         alt={"wholesale product image"}
                         width={300}
                         height={300}

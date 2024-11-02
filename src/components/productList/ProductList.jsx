@@ -40,7 +40,7 @@ const ProductList = async({ start,title, pagination = false ,is_new=false,img}) 
          {title}
         </Text>
         <Image
-          src={img}
+          src={img ? img : "/evelin-logo.jpeg"}
           alt={"smilegif"}
           width={25}
           height={25}

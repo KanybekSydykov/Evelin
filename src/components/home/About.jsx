@@ -104,7 +104,7 @@ const About = ({ data }) => {
             position={"relative"}
           >
             <Image
-              src={data.image}
+              src={data.image ? data.image : "/evelin-logo.jpeg"}
               alt={"about"}
               width={1920}
               height={1080}

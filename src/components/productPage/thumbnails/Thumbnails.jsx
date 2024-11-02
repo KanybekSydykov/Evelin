@@ -10,6 +10,10 @@ import "@/components/productCard/CardSlider.css";
 const Thumbnails = ({ images }) => {
   //   const [activeSlide, setActiveSlide] = useState(0);
 
+  if(images.length < 1){
+    return null
+  }
+
   const slideRef = useRef(null);
   const thumbRef = useRef(null);
 
@@ -76,7 +80,7 @@ const Thumbnails = ({ images }) => {
                     <Box pos={"relative"} w={"100%"} h={"100%"}>
                       {isImage(item.media) ? (
                         <Image
-                          src={item.media}
+                          src={item.media ? item.media : "/evelin-logo.jpeg"}
                           alt="Image 1"
                           width={500}
                           height={783}
@@ -228,7 +232,7 @@ const Thumbnails = ({ images }) => {
                 >
                   {isImage(item.media) ? (
                     <Image
-                      src={item.media}
+                      src={item.media ? item.media : "/evelin-logo.jpeg"}
                       alt="Image 1"
                       width={100}
                       height={143}

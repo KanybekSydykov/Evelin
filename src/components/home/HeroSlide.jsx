@@ -27,7 +27,7 @@ const HeroSlide = ({data}) => {
             
         <SplideSlide key={item.id}>
         <Image
-          src={item.slide}
+          src={item.slide ? item.slide : '/evelin-logo.jpeg'}
           alt="hero"
           width={1920}
           height={1080}

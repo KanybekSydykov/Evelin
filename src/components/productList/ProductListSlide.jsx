@@ -37,7 +37,7 @@ const ProductListSlide = async({title,is_top,img = null}) => {
           {title}
         </Text>
        {img && <Image
-          src={img}
+          src={img ? img : "/evelin-logo.jpeg"}
           alt={"smilegif"}
           width={25}
           height={25}

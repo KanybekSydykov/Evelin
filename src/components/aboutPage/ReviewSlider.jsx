@@ -7,6 +7,11 @@ import "@splidejs/react-splide/css";
 import "./Slider.css";
 
 const ReviewSlider = ({title,reviews}) => {
+
+  if(reviews.length === 0){
+    return null
+  }
+
   return (
     <Flex 
     flexDir={'column'}
@@ -71,7 +76,7 @@ const ReviewSlider = ({title,reviews}) => {
             <SplideSlide key={index}>
               <Box pos={"relative"} w={"193px"} h={"420px"}>
                 <Image
-                  src={review}
+                  src={review ? review : "/evelin-logo.jpeg"}
                   alt="Image 1"
                   width={275}
                   height={600}

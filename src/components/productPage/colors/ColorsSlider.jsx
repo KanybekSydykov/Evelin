@@ -74,7 +74,7 @@ const ColorsSlider = ({ colors, getSelectedColor }) => {
                 className="img-cover"
               >
                 <Image
-                  src={item.media[0].media}
+                  src={item.media[0].media ? item.media[0].media : "/evelin-logo.jpeg"}
                   alt="Image 1"
                   width={100}
                   height={143}
