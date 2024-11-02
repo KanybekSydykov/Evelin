@@ -10,10 +10,6 @@ import "@/components/productCard/CardSlider.css";
 const Thumbnails = ({ images }) => {
   //   const [activeSlide, setActiveSlide] = useState(0);
 
-  if(images.length < 1){
-    return null
-  }
-
   const slideRef = useRef(null);
   const thumbRef = useRef(null);
 
